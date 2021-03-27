@@ -2,14 +2,83 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>tracking.js - first tracking</title>
-  <script src="tracking-min.js"></script>
+  <title>tracking.js - face with camera</title>
+  <link rel="stylesheet" href="tracking.js-master/examples/assets/demo.css">
+
+  <script src="tracking.js"></script>
+  <script src="face.js"></script>
+  <script src="eye.js"></script>
+  <script src="mouth.js"></script>
+   <script src="../node_modules/dat.gui/build/dat.gui.min.js"></script>
+  <script src="stats.min.js"></script>
+
+  <style>
+  video, canvas {
+    margin-left: 230px;
+    margin-top: 120px;
+    position: absolute;
+  }
+  </style>
 </head>
 <body>
-  <video id="myVideo" width="400" height="300" preload autoplay loop muted></video>
-  <canvas id="canvas" width="320" height="240"></canvas>
+  <div class="demo-title">
+    <p><a href="http://trackingjs.com" target="_parent">tracking.js</a> － get user's webcam and detect faces</p>
+  </div>
+
+  <div class="demo-frame">
+    <div class="demo-container">
+      <video id="video" width="320" height="240" preload autoplay loop muted></video>
+      <canvas id="canvas" width="320" height="240"></canvas>
+
+
+<div style = "text-align:center">
+  <button class="button" onclick="none()">Off</button>
+   <button class="button" onclick="nick1()">Nick 1</button>
+   <button class="button" onclick="nick2()">Nick 2</button>
+   <button class="button" onclick="nick3()">Nick 3</button>
+
+    <style type="text/css">
+      .button {
+          background-color:black;
+          cursor:pointer;
+          align: center;
+          position: relative;
+          top: 50px;
+          width: 100px;
+          height: 40px;
+          color: #ffffff;
+          border: none;
+          font-size: 100%;
+      }
+      .button:focus {
+        border: 2px solid blue;
+      }
+    </style>
+</div>
+
+    </div>
+  </div>
+
+
   <script>
-     window.onload = function() {
+
+    var img = document.createElement("img");
+    img.src = '';
+
+    function none() {
+      img.src = '';
+    }
+    function nick1() {
+      img.src = 'img/nick1.png';
+    }
+    function nick2() {
+      img.src = 'img/nick2.png';
+    }
+    function nick3() {
+      img.src = 'img/nick3.png';
+    }
+
+    window.onload = function() {
       var video = document.getElementById('video');
       var canvas = document.getElementById('canvas');
       var context = canvas.getContext('2d');
@@ -34,8 +103,13 @@ tracker.on('track', function(event) {
 
   });
 });
+
+      var gui = new dat.GUI();
+      gui.add(tracker, 'edgesDensity', 0.1, 0.5).step(0.01);
+      gui.add(tracker, 'initialScale', 1.0, 10.0).step(0.1);
+      gui.add(tracker, 'stepSize', 1, 5).step(0.1);
+    };
   </script>
-   <canvas id="canvas" width="320" height="240"></canvas>
- 
+
 </body>
 </html>
