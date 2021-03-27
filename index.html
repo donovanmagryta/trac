@@ -20,31 +20,17 @@
   }
     canvas {
     margin-left: 230px;
-    margin-top: 120px;
+    margin-bottom: 120px;
     position: absolute;
   }
   </style>
 </head>
 <body>
-  <div class="demo-title">
-    <p><a href="http://trackingjs.com" target="_parent">tracking.js</a> － get user's webcam and detect faces</p>
-  </div>
-
   <div class="demo-frame">
     <div class="demo-container">
       <video id="video" width="320" height="240" preload autoplay loop muted></video>
       <canvas id="canvas" width="320" height="240"></canvas>
-
-
-<div style = "text-align:center">
- 
-
-    <style type="text/css">
-     
-    </style>
 </div>
-
-    </div>
   </div>
 
 
@@ -62,10 +48,7 @@
       var video = document.getElementById('video');
       var canvas = document.getElementById('canvas');
       var context = canvas.getContext('2d');
-
-//var trackerEyesMouth = new tracking.ObjectTracker(['eye', 'mouth']); 
-//EYES/MOUTH stepSize = 1.5 EdgeDensity = 1
-//FACE step 2, scale 4, edge .1
+    
 var tracker = new tracking.ObjectTracker('face');
       tracker.setInitialScale(4);
       tracker.setStepSize(2);
@@ -84,11 +67,6 @@ tracker.on('track', function(event) {
 
   });
 });
-
-    //  var gui = new dat.GUI();
-     // gui.add(tracker, 'edgesDensity', 0.1, 0.5).step(0.01);
-     // gui.add(tracker, 'initialScale', 1.0, 10.0).step(0.1);
-     // gui.add(tracker, 'stepSize', 1, 5).step(0.1);
     };
   </script>
 
