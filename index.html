@@ -13,14 +13,14 @@
 
   <style>
   video {
-    margin-left: 230px;
-    margin-top: 120px;
+    margin-left: 460px;
+    margin-top: 240px;
     position: absolute;
     
   }
     canvas {
-    margin-left: 230px;
-    margin-bottom: 120px;
+    margin-left: 460px;
+    margin-top: 240px;
     position: absolute;
   }
   </style>
@@ -61,7 +61,7 @@ tracker.on('track', function(event) {
   context.clearRect(0, 0, canvas.width, canvas.height);
 
   event.data.forEach(function(rect) {
-canvas.width =  rect.x; //untested convert rect.x to wdith skew with 0% skew at center point.
+context.width =  rect.x; //untested convert rect.x to wdith skew with 0% skew at center point.
     //context.drawImage(img, rect.x, rect.y/4, rect.width + 11, rect.height * 1.9);
 context.drawImage(img);
     console.log(rect.x);
