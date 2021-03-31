@@ -70,11 +70,13 @@ tracker.on('track', function(event) {
 middlepos = ; // center x position
 const diff = (middlepos, rect.x) => {
     if (middlepos > rect.x) {
-         return middlepos - rect.x;
+         wide = middlepos - rect.x;
     } else {
-        return rect.x - middlepos;
+        wid = rect.x - middlepos;
     }
 }
+var theImg = document.getElementById('img');
+theImg.width = wid;
   // }
 
   });
