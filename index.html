@@ -68,11 +68,14 @@ tracker.on('track', function(event) {
 //context.drawImage(img);
     console.log(rect.x);
 middlepos = ; // center x position
-
-var distance = Math.sqrt( Math.pow((x1-x2), 2) + Math.pow((y1-
-y2), 2) );
-            document.getElementById('img').innerHTML= 'width = distance;";
-        }
+const diff = (middlepos, rect.x) => {
+    if (middlepos > rect.x) {
+         return middlepos - rect.x;
+    } else {
+        return rect.x - middlepos;
+    }
+}
+  // }
 
   });
 });
