@@ -3,7 +3,6 @@
 <head>
   <meta charset="utf-8">
   <title>tracking.js - face with camera</title>
-  <!--<link rel="stylesheet" href="tracking.js-master/examples/assets/demo.css">-->
 
   <script src="tracking.js"></script>
   <script src="face.js"></script>
@@ -57,7 +56,7 @@ tracker.on('track', function(event) {
   event.data.forEach(function(rect) {
 
     console.log(rect.x);
-middlepos = ; // center x position
+middlepos = 80; // center x position
 
     if (middlepos > rect.x) {
          wid = middlepos - rect.x;
