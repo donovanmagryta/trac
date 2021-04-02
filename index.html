@@ -68,13 +68,13 @@ tracker.on('track', function(event) {
 //context.drawImage(img);
     console.log(rect.x);
 middlepos = ; // center x position
-const diff = (middlepos, rect.x) => {
+
     if (middlepos > rect.x) {
          wid = middlepos - rect.x;
     } else {
         wid = rect.x - middlepos;
     }
-}
+
 var theImg = document.getElementById('img');
 wid = wid + 23; // Might need to adjust wid here.
 theImg.width = wid;
