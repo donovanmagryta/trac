@@ -18,19 +18,14 @@
     position: absolute;
     opacity: 100%;
   }
-    canvas {
-    margin-left: 230px;
-    margin-top: 120px;
-    position: absolute;
-  
-  }
+   
   </style>
 </head>
 <body>
   <div class="demo-frame">
     <div class="demo-container">
       <video id="video" width="320" height="240" preload autoplay loop muted></video>
-     <!--<canvas id="canvas" width="320" height="240"></canvas>-->
+     
 </div>
   </div>
 
@@ -40,16 +35,12 @@
     var img = document.createElement("img");
     img.src = 'heart.png';
 
-    function none() {
-      img.src = '';
-    }
+ 
     
 
     window.onload = function() {
       var video = document.getElementById('video');
-      // var canvas = document.getElementById('canvas');
-     //  var context = canvas.getContext('2d');
-    
+     
 var tracker = new tracking.ObjectTracker('face');
       tracker.setInitialScale(4);
       tracker.setStepSize(2);
@@ -59,13 +50,9 @@ tracking.track('#video', tracker, { camera: true });
 
 tracker.on('track', function(event) {
 
- // context.clearRect(0, 0, canvas.width, canvas.height);
-
+ 
   event.data.forEach(function(rect) {
-//canvas.width =  rect.x; //untested convert rect.x to wdith skew with 0% skew at center point.
-    //context.drawImage(img, rect.x, rect.y/4, rect.width + 11, rect.height * 1.9);
-   // context.drawImage(img);
-//context.drawImage(img);
+
     console.log(rect.x);
 middlepos = ; // center x position
 
